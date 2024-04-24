@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
+import { GithubIcon, LinkedInIcon } from './Icons'
 
 const Navbar = () => {
 
@@ -27,7 +28,7 @@ const Navbar = () => {
         }
     ]
   return (
-    <div className='w-full h-full md:px-32 flex items-center'>
+    <div className='w-full h-full md:px-32 flex items-center justify-evenly'>
       <nav className='flex gap-6 w-1/3'>
         {links.map(({id,title, path}) => (
             <Link className='relative group' key={id} href={path}>
@@ -36,6 +37,15 @@ const Navbar = () => {
             </Link> 
         ))}
       </nav>
+
+      <div className='w-1/3 flex items-center justify-center'>
+        <Link href="/" className='w-16 h-16 text-white bg-black rounded-full flex items-center justify-center font-bold text-xl border-2 border-white'>AV</Link>
+      </div>
+
+      <div className='w-1/3 flex justify-center items-center gap-6'>
+        <GithubIcon className='w-8 h-8'/>
+        {/* <LinkedInIcon className='w-8 h-8'/> */}
+      </div>
     </div>
   )
 }
