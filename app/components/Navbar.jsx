@@ -42,10 +42,14 @@ const Navbar = () => {
         <Link href="/" className='w-16 h-16 text-white bg-black rounded-full flex items-center justify-center font-bold text-xl border-2 border-white'>AV</Link>
       </div>
 
-      <div className='w-1/3 flex justify-center items-center gap-6'>
-        <GithubIcon className='w-8 h-8'/>
-        {/* <LinkedInIcon className='w-8 h-8'/> */}
-      </div>
+      <nav className='w-1/3 flex justify-center items-center gap-6'>
+        <Link className='w-8 h-8' href="/">
+          <GithubIcon/>
+        </Link>
+        <Link className='w-8 h-8' href="/">
+          <LinkedInIcon/>
+        </Link>
+      </nav>
     </div>
   )
 }
