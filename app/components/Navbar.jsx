@@ -10,6 +10,10 @@ const Navbar = () => {
     const[open, setOpen] = useState(false)
     const pathname = usePathname()
 
+    const handleClick = () => {
+      setOpen(!open)
+    }
+
     const links = [
         {
             id: 1,
@@ -29,10 +33,10 @@ const Navbar = () => {
     ]
   return (
     <div className='w-full h-full md:px-32 px-8 flex justify-center items-center'>
-      <button className='flex flex-col gap-1 justify-center items-center'>
-        <span className='w-6 h-0.5 bg-black'></span>
-        <span className='w-6 h-0.5 bg-black'></span>
-        <span className='w-6 h-0.5 bg-black'></span>
+      <button onClick={() => handleClick()} className='flex md:hidden flex-col gap-1 justify-center items-center'>
+        <span className={`w-6 h-0.5 bg-black ${open ? 'rotate-45 translate-y-0.5' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-black ${open ? 'hidden' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-black ${open ? '-rotate-45 -translate-y-1' : ''}`}></span>
       </button>
       <div className='w-full h-full flex items-center justify-evenly'>
         <nav className='md:flex hidden gap-6 w-1/3'>
