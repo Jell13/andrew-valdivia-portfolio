@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import { GithubIcon, LinkedInIcon } from './Icons'
 import { motion } from "framer-motion"
+import { ModeToggle } from './mode-toggle'
 
 const Navbar = () => {
 
@@ -35,21 +36,21 @@ const Navbar = () => {
   return (
     <div className='w-full h-full md:px-32 px-8 flex justify-center items-center relative'>
       <button onClick={() => handleClick()} className='flex md:hidden flex-col gap-1 justify-center items-center'>
-        <span className={`w-6 h-0.5 bg-black ease-in duration-200 ${open ? 'rotate-45 translate-y-0.5' : ''}`}></span>
-        <span className={`w-6 h-0.5 bg-black ease-in duration-200 ${open ? 'hidden' : ''}`}></span>
-        <span className={`w-6 h-0.5 bg-black ease-in duration-200 ${open ? '-rotate-45 -translate-y-1' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-black dark:bg-light ease-in duration-200 ${open ? 'rotate-45 translate-y-0.5' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-black dark:bg-light ease-in duration-200 ${open ? 'hidden' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-black dark:bg-light ease-in duration-200 ${open ? '-rotate-45 -translate-y-1' : ''}`}></span>
       </button>
       <div className='w-full h-full flex items-center justify-evenly'>
         <nav className='md:flex hidden gap-6 w-1/3'>
           {links.map(({id,title, path}) => (
               <Link className='relative group' key={id} href={path}>
                   {title}
-                  <span className={`absolute left-0 bottom-0.5 inline-block bg-black h-[2px] ${pathname === path ? 'w-full' : 'w-0'} group-hover:w-full duration-300`}>&nbsp;</span>
+                  <span className={`absolute left-0 bottom-0.5 inline-block bg-black dark:bg-light h-[2px] ${pathname === path ? 'w-full' : 'w-0'} group-hover:w-full duration-300`}>&nbsp;</span>
               </Link> 
           ))}
         </nav>
         <div className='w-1/3 flex items-center justify-center'>
-          <Link href="/" className='w-16 h-16 text-white bg-black rounded-full flex items-center justify-center font-bold text-xl border-2 border-white'>AV</Link>
+          <Link href="/" className='w-16 h-16 bg-black dark:text-light text-light rounded-full flex items-center justify-center font-bold text-xl border-2 border-white'>AV</Link>
         </div>
 
         <nav className='w-1/3 md:flex hidden justify-center items-center gap-6'>
@@ -59,6 +60,7 @@ const Navbar = () => {
           {/* <Link className='w-8 h-8' href="/">
             <LinkedInIcon/>
           </Link> */}
+          <ModeToggle/>
         </nav>
       </div>
 
@@ -79,6 +81,7 @@ const Navbar = () => {
               <Link className='w-8 h-8' href="/">
                 <LinkedInIcon/>
               </Link>
+              <ModeToggle/>
             </nav>
           </nav>
 
