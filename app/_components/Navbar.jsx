@@ -15,7 +15,6 @@ const Navbar = () => {
     const handleClick = () => {
       setOpen(!open)
     }
-
     const links = [
         {
             id: 1,
@@ -66,19 +65,19 @@ const Navbar = () => {
 
       {open && 
         <motion.div initial={{scale:0, opacity:0, x:"-50%", y:"-50%"}}
-        animate={{scale:1, opacity:1}} className='w-[70vw] z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed bg-black/90 opacity-80 h-3/4 rounded-lg backdrop-blur-xl'>
+        animate={{scale:1, opacity:1}} className='w-[70vw] dark:bg-light/80 z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed bg-black/90 opacity-80 h-3/4 rounded-lg backdrop-blur-xl'>
           <nav className=' h-full flex flex-col items-center justify-center gap-4'>
             {links.map(({id, title, path}) => (
-              <Link className='text-light group relative' key={id} href={path}>
+              <Link onClick={() => handleClick()} className='text-light dark:text-black group relative' key={id} href={path}>
                 {title}
-                <span className={`absolute h-[2px] group-hover:w-full ease-in duration-200 bg-light top-5 left-0 ${pathname === path ? 'w-full' : 'w-0'}`}></span>
+                <span className={`absolute h-[2px] group-hover:w-full ease-in duration-200 bg-light dark:bg-black top-5 left-0 ${pathname === path ? 'w-full' : 'w-0'}`}></span>
               </Link>
             ))}
             <nav className='w-22 gap-4 flex'>
-              <Link className='w-8 h-8' href="/">
-                <GithubIcon className={`bg-light`}/>
+              <Link className='w-10 h-10' href="/">
+                <GithubIcon className={`bg-light dark:bg-black`}/>
               </Link>
-              <Link className='w-8 h-8' href="/">
+              <Link className='w-10 h-10' href="/">
                 <LinkedInIcon/>
               </Link>
               <ModeToggle/>
