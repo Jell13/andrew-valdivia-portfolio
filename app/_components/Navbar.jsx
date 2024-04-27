@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
         </nav>
         <div className='w-1/3 flex items-center justify-center'>
-          <Link href="/" className='w-16 h-16 bg-black dark:text-light text-light rounded-full flex items-center justify-center font-bold text-xl border-2 border-white'>AV</Link>
+          <Link href="/" className='w-16 h-16 bg-black hover:bg-blue-500 ease-in duration-300 dark:text-light text-light rounded-full flex items-center justify-center font-bold text-xl border-2 border-white'>AV</Link>
         </div>
 
         <nav className='w-1/3 md:flex hidden justify-center items-center gap-6'>

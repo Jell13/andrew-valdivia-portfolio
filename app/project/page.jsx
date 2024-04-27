@@ -1,10 +1,15 @@
+"use client"
+import TransitionEffect from '@app/_components/TransitionEffect'
 import React from 'react'
 
 const Projects = () => {
   return (
-    <div>
-      Project Page
-    </div>
+    <>
+      <TransitionEffect/>
+      <div>
+        Project Page
+      </div>
+    </>
   )
 }
 
