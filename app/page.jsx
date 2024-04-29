@@ -23,7 +23,9 @@ export default function Home() {
               autoStart: true,
               loop: true,
             }}
-          /> 
+          />
+
+          <a className="mt-5 text-xl bg-black text-light dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-light hover:bg-light hover:text-black duration-300 p-2 rounded-2xl" href="/" download="Andrew_Valdivia_Resume">Resume</a>
         </div>
       </div>
     </>
