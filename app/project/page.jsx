@@ -6,8 +6,10 @@ const Projects = () => {
   return (
     <>
       <TransitionEffect/>
-      <div>
-        Project Page
+      <div className='w-full h-full'>
+        <div className='w-full h-full flex justify-center items-center'>
+          <h1>Project Page</h1>
+        </div>
       </div>
     </>
   )
